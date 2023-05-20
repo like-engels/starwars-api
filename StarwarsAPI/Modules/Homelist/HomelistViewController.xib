@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomelistViewController" customModule="CatsAPITest" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="lUk-iE-Pmn" id="os8-EO-4K5"/>
+                <outlet property="currentPageIndicatorLabel" destination="sKA-Km-DAu" id="CgV-3W-hVW"/>
+                <outlet property="nextPageButton" destination="SLz-oK-u9A" id="fPW-3q-ss9"/>
+                <outlet property="previousPageButtton" destination="yzy-eW-Pw7" id="coL-Fd-hGW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-Rd-Ln2">
+                    <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                    <items>
+                        <navigationItem title="Cats" id="UwV-Mk-vcB"/>
+                    </items>
+                </navigationBar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lUk-iE-Pmn">
+                    <rect key="frame" x="10" y="165" width="373" height="603"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iQF-pN-Lpd">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzy-eW-Pw7">
+                    <rect key="frame" x="29.999999999999996" y="781" width="50.666666666666657" height="35"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left" catalog="system"/>
+                    <connections>
+                        <action selector="previousButtonTouchAction:" destination="-1" eventType="touchUpInside" id="B6N-PE-bG4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLz-oK-u9A">
+                    <rect key="frame" x="312" y="781" width="51" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right" catalog="system"/>
+                    <connections>
+                        <action selector="nextButtonTouchAction:" destination="-1" eventType="touchUpInside" id="pgb-Zk-tb3"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKA-Km-DAu">
+                    <rect key="frame" x="175.66666666666666" y="788" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="1oQ-Rd-Ln2" secondAttribute="trailing" id="EcN-pv-IvA"/>
+                <constraint firstItem="sKA-Km-DAu" firstAttribute="top" secondItem="lUk-iE-Pmn" secondAttribute="bottom" constant="20" id="EwQ-PG-e2m"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SLz-oK-u9A" secondAttribute="bottom" constant="2" id="KaB-Uz-YKo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lUk-iE-Pmn" secondAttribute="trailing" constant="10" id="KjT-G2-XC3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SLz-oK-u9A" secondAttribute="trailing" constant="30" id="M8b-h6-Maa"/>
+                <constraint firstItem="lUk-iE-Pmn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="MK6-sa-AC0"/>
+                <constraint firstItem="sKA-Km-DAu" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WhP-pv-4IA"/>
+                <constraint firstItem="yzy-eW-Pw7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="YSK-rv-Xhe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sKA-Km-DAu" secondAttribute="bottom" constant="9" id="cal-qg-PXU"/>
+                <constraint firstItem="sKA-Km-DAu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yzy-eW-Pw7" secondAttribute="trailing" constant="94.670000000000002" id="mZo-1V-NAp"/>
+                <constraint firstItem="1oQ-Rd-Ln2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nPR-Kh-1uH"/>
+                <constraint firstItem="1oQ-Rd-Ln2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pQ5-uL-VPi"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yzy-eW-Pw7" secondAttribute="bottom" constant="2" id="tVq-1J-EaU"/>
+                <constraint firstItem="lUk-iE-Pmn" firstAttribute="top" secondItem="1oQ-Rd-Ln2" secondAttribute="bottom" constant="10" id="uaZ-zN-89X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sKA-Km-DAu" secondAttribute="bottom" constant="9" id="v1g-zv-mjT"/>
+                <constraint firstItem="SLz-oK-u9A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sKA-Km-DAu" secondAttribute="trailing" constant="94.329999999999998" id="z82-aw-No2"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="104"/>
+        <image name="arrowshape.turn.up.right" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
