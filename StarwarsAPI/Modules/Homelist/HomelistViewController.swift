@@ -28,6 +28,8 @@ class HomelistViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "HomelistCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reusableCell")
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Starwars API"
         
         viewModel.pageIndicatorSubject
             .receive(on: DispatchQueue.main)
@@ -58,7 +60,6 @@ class HomelistViewController: UIViewController {
         
         setupDataSource()
         fetchData()
-        
         
         // Do any additional setup after loading the view.
     }
@@ -153,7 +154,10 @@ extension HomelistViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             guard let selectedItem = dataSource.itemIdentifier(for: indexPath) else { return }
-            print("Selected item: \(selectedItem)")
+            //print("Selected item: \(selectedItem)")
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(CharacterDetailsViewController(character: selectedItem), animated: true)
+        }
     }
     
 }

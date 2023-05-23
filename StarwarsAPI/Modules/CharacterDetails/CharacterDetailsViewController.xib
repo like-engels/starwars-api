@@ -8,8 +8,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailsViewController" customModule="CatsAPITest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharacterDetailsViewController" customModule="StarwarsAPI" customModuleProvider="target">
             <connections>
+                <outlet property="characterBirthdate" destination="H7J-C2-pjc" id="I8e-ie-def"/>
+                <outlet property="characterGender" destination="4Jl-8X-M2t" id="avi-6S-VoO"/>
+                <outlet property="characterHomeworld" destination="ngZ-uV-jv4" id="eoH-h6-5AM"/>
+                <outlet property="characterImage" destination="m20-EK-NGo" id="MPK-Kc-sDS"/>
+                <outlet property="characterName" destination="flc-UT-Cee" id="F6k-Me-faF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,25 +23,86 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m20-EK-NGo">
-                    <rect key="frame" x="71.666666666666686" y="74" width="250" height="250"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="network" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="m20-EK-NGo">
+                    <rect key="frame" x="71.666666666666686" y="59.999999999999986" width="250" height="248.66666666666663"/>
+                    <color key="tintColor" systemColor="labelColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="BeV-8W-UVr"/>
                         <constraint firstAttribute="width" secondItem="m20-EK-NGo" secondAttribute="height" multiplier="1:1" id="Fg0-Zc-Lew"/>
                         <constraint firstAttribute="width" constant="250" id="IT3-bq-htO"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flc-UT-Cee">
+                    <rect key="frame" x="105.66666666666669" y="329" width="182" height="30"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7P-Ra-i8v">
+                    <rect key="frame" x="162.66666666666666" y="379" width="68" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jl-8X-M2t">
+                    <rect key="frame" x="129.66666666666666" y="418" width="133.99999999999997" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homeworld" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNx-Q3-bHU">
+                    <rect key="frame" x="143.66666666666666" y="461" width="106" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character homeworld" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngZ-uV-jv4">
+                    <rect key="frame" x="114.33333333333333" y="500" width="164.66666666666669" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-9E-qEv">
+                    <rect key="frame" x="153.66666666666666" y="543" width="86" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character birthdate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7J-C2-pjc">
+                    <rect key="frame" x="122" y="584" width="149" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="m20-EK-NGo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="71U-Nl-gTv"/>
+                <constraint firstItem="flc-UT-Cee" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4cW-iC-Ca1"/>
+                <constraint firstItem="rNx-Q3-bHU" firstAttribute="top" secondItem="4Jl-8X-M2t" secondAttribute="bottom" constant="22" id="7pB-1N-Jhg"/>
+                <constraint firstItem="flc-UT-Cee" firstAttribute="top" secondItem="m20-EK-NGo" secondAttribute="bottom" constant="20" id="CH1-hf-flg"/>
+                <constraint firstItem="H7J-C2-pjc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JF9-wg-Pdl"/>
+                <constraint firstItem="4Jl-8X-M2t" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JXS-1Q-HsZ"/>
+                <constraint firstItem="2Ne-9E-qEv" firstAttribute="top" secondItem="ngZ-uV-jv4" secondAttribute="bottom" constant="22" id="OKK-Qb-g1W"/>
                 <constraint firstItem="m20-EK-NGo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PDK-XP-4pH"/>
+                <constraint firstItem="4Jl-8X-M2t" firstAttribute="top" secondItem="y7P-Ra-i8v" secondAttribute="bottom" constant="15" id="Tb3-tC-BPc"/>
+                <constraint firstItem="m20-EK-NGo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Xc0-EC-Bxl"/>
+                <constraint firstItem="2Ne-9E-qEv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zcl-mH-iVZ"/>
+                <constraint firstItem="y7P-Ra-i8v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cyB-II-keS"/>
+                <constraint firstItem="rNx-Q3-bHU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e63-vs-oDS"/>
+                <constraint firstItem="H7J-C2-pjc" firstAttribute="top" secondItem="2Ne-9E-qEv" secondAttribute="bottom" constant="17" id="gCR-Qm-ETV"/>
+                <constraint firstItem="ngZ-uV-jv4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kio-fn-zou"/>
+                <constraint firstItem="y7P-Ra-i8v" firstAttribute="top" secondItem="flc-UT-Cee" secondAttribute="bottom" constant="20" id="qc7-i6-Tlz"/>
+                <constraint firstItem="ngZ-uV-jv4" firstAttribute="top" secondItem="rNx-Q3-bHU" secondAttribute="bottom" constant="15" id="zPo-yE-nnq"/>
             </constraints>
             <point key="canvasLocation" x="140" y="21"/>
         </view>
     </objects>
     <resources>
+        <image name="network" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

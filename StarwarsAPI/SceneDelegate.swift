@@ -22,7 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     
-        navigationController.setNavigationBarHidden(true, animated: false)
         navigationController.pushViewController(HomelistViewController(nibName: "HomelistViewController", bundle: nil, viewModel: HomelistViewModel()), animated: false)
         
         

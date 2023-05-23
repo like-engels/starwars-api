@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomelistViewController" customModule="CatsAPITest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomelistViewController" customModule="StarwarsAPI" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="lUk-iE-Pmn" id="os8-EO-4K5"/>
                 <outlet property="currentPageIndicatorLabel" destination="sKA-Km-DAu" id="CgV-3W-hVW"/>
@@ -22,14 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1oQ-Rd-Ln2">
-                    <rect key="frame" x="0.0" y="59" width="393" height="96"/>
-                    <items>
-                        <navigationItem title="Cats" id="UwV-Mk-vcB"/>
-                    </items>
-                </navigationBar>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lUk-iE-Pmn">
-                    <rect key="frame" x="10" y="165" width="373" height="603"/>
+                    <rect key="frame" x="10" y="69" width="373" height="699"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iQF-pN-Lpd">
                         <size key="itemSize" width="128" height="128"/>
@@ -63,7 +57,6 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="1oQ-Rd-Ln2" secondAttribute="trailing" id="EcN-pv-IvA"/>
                 <constraint firstItem="sKA-Km-DAu" firstAttribute="top" secondItem="lUk-iE-Pmn" secondAttribute="bottom" constant="20" id="EwQ-PG-e2m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SLz-oK-u9A" secondAttribute="bottom" constant="2" id="KaB-Uz-YKo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lUk-iE-Pmn" secondAttribute="trailing" constant="10" id="KjT-G2-XC3"/>
@@ -73,10 +66,8 @@
                 <constraint firstItem="yzy-eW-Pw7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="YSK-rv-Xhe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sKA-Km-DAu" secondAttribute="bottom" constant="9" id="cal-qg-PXU"/>
                 <constraint firstItem="sKA-Km-DAu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yzy-eW-Pw7" secondAttribute="trailing" constant="94.670000000000002" id="mZo-1V-NAp"/>
-                <constraint firstItem="1oQ-Rd-Ln2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nPR-Kh-1uH"/>
-                <constraint firstItem="1oQ-Rd-Ln2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pQ5-uL-VPi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yzy-eW-Pw7" secondAttribute="bottom" constant="2" id="tVq-1J-EaU"/>
-                <constraint firstItem="lUk-iE-Pmn" firstAttribute="top" secondItem="1oQ-Rd-Ln2" secondAttribute="bottom" constant="10" id="uaZ-zN-89X"/>
+                <constraint firstItem="lUk-iE-Pmn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="uaZ-zN-89X"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sKA-Km-DAu" secondAttribute="bottom" constant="9" id="v1g-zv-mjT"/>
                 <constraint firstItem="SLz-oK-u9A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sKA-Km-DAu" secondAttribute="trailing" constant="94.329999999999998" id="z82-aw-No2"/>
             </constraints>

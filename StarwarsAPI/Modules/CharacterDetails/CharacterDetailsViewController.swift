@@ -9,21 +9,33 @@ import UIKit
 
 class CharacterDetailsViewController: UIViewController {
 
+    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var characterGender: UILabel!
+    @IBOutlet weak var characterHomeworld: UILabel!
+    @IBOutlet weak var characterBirthdate: UILabel!
+    private let character: CharacterModel
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "\(character.name) Details"
+        
+        characterName.text = character.name
+        characterGender.text = character.gender.rawValue
+        characterHomeworld.text = character.homeworld
+        characterBirthdate.text = character.birthYear
 
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    init(character: CharacterModel) {
+        self.character = character
+        super.init(nibName: "CharacterDetailsViewController", bundle: nil)
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
